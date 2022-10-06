@@ -41,7 +41,7 @@ public class SchereSteinPapier {
     }
 
     public void winLogic() {
-      //  Schere schlägt verliert gegen stein, Schere gewinnt gegen Papier
+      //          Schere verliert gegen stein, Schere gewinnt gegen Papier
         //        Stein gewinnt gegen schere verliert aber gegen papier
           //      papier verliert gegen schere aber gewinnt gegen stein
 
