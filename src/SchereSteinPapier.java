@@ -24,7 +24,7 @@ public class SchereSteinPapier {
             case "stein" -> userInput = "Stein \uD83E\uDEA8";
             case "papier" -> userInput = "Papier \uD83D\uDCDD";
         }
-        System.out.println("Der "+TerminalColorStrings.ANSI_BLUE+"User"+TerminalColorStrings.ANSI_RESET+" hat "+userInput+ " ausgewählt.\n");
+        System.out.println("Der " + TerminalColorStrings.ANSI_BLUE + "User" + TerminalColorStrings.ANSI_RESET + " hat " + userInput + " ausgewählt.\n");
     }
 
     private void automaticComputerChoice() {
@@ -33,7 +33,7 @@ public class SchereSteinPapier {
 
         computerOutput = SchereSteinPapierArray.get(0);
 
-        System.out.println("Der"+TerminalColorStrings.ANSI_GREEN+" Computer"+TerminalColorStrings.ANSI_RESET+" hat "+computerOutput+ " ausgewählt.\n");
+        System.out.println("Der" + TerminalColorStrings.ANSI_GREEN + " Computer" + TerminalColorStrings.ANSI_RESET + " hat " + computerOutput + " ausgewählt.\n");
 
     }
 
@@ -44,35 +44,35 @@ public class SchereSteinPapier {
     }
 
     private void determineWinner() {
-        System.out.println(TerminalColorStrings.ANSI_BLUE+"User:"+TerminalColorStrings.ANSI_RESET+" ("+userInput+") vs"+TerminalColorStrings.ANSI_GREEN+" Computer: "+TerminalColorStrings.ANSI_RESET+ "("+ computerOutput+")\n");
+        System.out.println(TerminalColorStrings.ANSI_BLUE + "User:" + TerminalColorStrings.ANSI_RESET + " (" + userInput + ") vs" + TerminalColorStrings.ANSI_GREEN + " Computer: " + TerminalColorStrings.ANSI_RESET + "(" + computerOutput + ")\n");
         this.winLogic(userInput, computerOutput);
     }
 
 
     public String winLogic(String userInput, String computerOutput) {
-      //          Schere verliert gegen stein, Schere gewinnt gegen Papier
+        //          Schere verliert gegen stein, Schere gewinnt gegen Papier
         //        Stein gewinnt gegen schere verliert aber gegen papier
-          //      papier verliert gegen schere aber gewinnt gegen stein
+        //      papier verliert gegen schere aber gewinnt gegen stein
 
         if (userInput.equals(computerOutput)) {
             System.out.println("Niemand hat gewonnen.. \uD83E\uDD1D");
             return "Niemand";
         }
         if (userInput.equals("Schere ✂️") && !computerOutput.equals("Stein \uD83E\uDEA8")) {
-            System.out.println(TerminalColorStrings.ANSI_YELLOW+"(GEWINNER) "+TerminalColorStrings.ANSI_BLUE+"User:"+TerminalColorStrings.ANSI_RESET+ "("+userInput+")" + " hat gewonnen.");
+            System.out.println(TerminalColorStrings.ANSI_YELLOW + "(GEWINNER) " + TerminalColorStrings.ANSI_BLUE + "User:" + TerminalColorStrings.ANSI_RESET + "(" + userInput + ")" + " hat gewonnen.");
             return "User";
         }
 
         if (userInput.equals("Stein \uD83E\uDEA8") && !computerOutput.equals("Papier \uD83D\uDCDD")) {
-            System.out.println(TerminalColorStrings.ANSI_YELLOW+"(GEWINNER) "+TerminalColorStrings.ANSI_BLUE+"User:"+TerminalColorStrings.ANSI_RESET+ "("+userInput+")" + " hat gewonnen.");
+            System.out.println(TerminalColorStrings.ANSI_YELLOW + "(GEWINNER) " + TerminalColorStrings.ANSI_BLUE + "User:" + TerminalColorStrings.ANSI_RESET + "(" + userInput + ")" + " hat gewonnen.");
             return "User";
         }
 
         if (userInput.equals("Papier \uD83D\uDCDD") && !computerOutput.equals("Schere ✂️")) {
-            System.out.println(TerminalColorStrings.ANSI_YELLOW+"(GEWINNER) "+TerminalColorStrings.ANSI_BLUE+"User:"+TerminalColorStrings.ANSI_RESET+ "("+userInput+")" + " hat gewonnen.");
+            System.out.println(TerminalColorStrings.ANSI_YELLOW + "(GEWINNER) " + TerminalColorStrings.ANSI_BLUE + "User:" + TerminalColorStrings.ANSI_RESET + "(" + userInput + ")" + " hat gewonnen.");
 
         } else {
-            System.out.println(TerminalColorStrings.ANSI_YELLOW+"(GEWINNER) "+ TerminalColorStrings.ANSI_GREEN+"Computer:"+TerminalColorStrings.ANSI_RESET+ "("+computerOutput+")"+" hat gewonnen.");
+            System.out.println(TerminalColorStrings.ANSI_YELLOW + "(GEWINNER) " + TerminalColorStrings.ANSI_GREEN + "Computer:" + TerminalColorStrings.ANSI_RESET + "(" + computerOutput + ")" + " hat gewonnen.");
         }
         return "Computer";
     }
