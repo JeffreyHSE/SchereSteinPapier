@@ -16,6 +16,7 @@ public class SchereSteinPapierTest {
             checkWhenUserHasPaper();
             checkWhenComputerHasScissors();
             checkWhenComputerHasStone();
+            checkWhenComputerHasPaper();
         }
 
         private void checkWhenEqual() {
@@ -61,12 +62,12 @@ public class SchereSteinPapierTest {
 
         private void checkWhenComputerHasStone() {
             String winner = cut.winLogic("Papier \uD83D\uDCDD", "Stein \uD83E\uDEA8");
-            String expectedWinner = "User";
+            String expectedWinner = "Computer";
             assertThat(winner, is(expectedWinner));
     }
 
         private void checkWhenComputerHasPaper() {
-            String winner = cut.winLogic("Schere ✂️ \uD83D\uDCDD", "Papier");
+            String winner = cut.winLogic("Schere ✂️", "Papier");
             String expectedWinner = "User";
             assertThat(winner, is(expectedWinner));
     }

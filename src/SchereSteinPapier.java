@@ -70,7 +70,7 @@ public class SchereSteinPapier {
 
         if (userInput.equals("Papier \uD83D\uDCDD") && !computerOutput.equals("Schere ✂️")) {
             System.out.println(TerminalColorStrings.ANSI_YELLOW+"(GEWINNER) "+TerminalColorStrings.ANSI_BLUE+"User:"+TerminalColorStrings.ANSI_RESET+ "("+userInput+")" + " hat gewonnen.");
-            return "User";
+
         } else {
             System.out.println(TerminalColorStrings.ANSI_YELLOW+"(GEWINNER) "+ TerminalColorStrings.ANSI_GREEN+"Computer:"+TerminalColorStrings.ANSI_RESET+ "("+computerOutput+")"+" hat gewonnen.");
         }
