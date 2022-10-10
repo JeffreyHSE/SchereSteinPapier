@@ -5,12 +5,12 @@ public class SchereSteinPapierScore {
 
     public void addScoreToUser() {
         userScore += 1;
-        System.out.println(TerminalColorStrings.ANSI_BLUE + "User" + TerminalColorStrings.ANSI_RESET + " score (" + userScore + ")");
+        System.out.println(TerminalColorStrings.ANSI_BLUE + "User" + TerminalColorStrings.ANSI_RESET + " score: (" + userScore + ")" + TerminalColorStrings.ANSI_GREEN + " Computer" + TerminalColorStrings.ANSI_RESET + " score (" + computerScore + ")");
     }
 
     public void addScoreToComputer() {
         computerScore += 1;
-        System.out.println(TerminalColorStrings.ANSI_GREEN + "Computer" + TerminalColorStrings.ANSI_RESET + " score (" + computerScore + ")");
+        System.out.println(TerminalColorStrings.ANSI_GREEN + "Computer" + TerminalColorStrings.ANSI_RESET + " score (" + computerScore + ")" + TerminalColorStrings.ANSI_BLUE + " User" + TerminalColorStrings.ANSI_RESET + " score: (" + userScore + ")");
     }
 
 
