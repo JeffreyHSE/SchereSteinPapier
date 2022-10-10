@@ -7,11 +7,14 @@ public class SchereSteinPapier {
     private String computerOutput;
     private Scanner ssp;
     private ArrayList<String> SchereSteinPapierArray = new ArrayList<>();
+    private SchereSteinPapierScore score = new SchereSteinPapierScore();
+    private String doYouWantToPlayAgain;
 
     public void run() {
         userChoice();
         automaticComputerChoice();
         determineWinner();
+        playAgain();
     }
 
     private void userChoice() {
@@ -48,6 +51,17 @@ public class SchereSteinPapier {
         this.winLogic(userInput, computerOutput);
     }
 
+    public void playAgain() {
+        System.out.println(TerminalColorStrings.ANSI_YELLOW + "Do you want to play again?" + TerminalColorStrings.ANSI_RESET);
+        doYouWantToPlayAgain = ssp.nextLine();
+        if (doYouWantToPlayAgain.contains("Yes")) {
+            run();
+        } else {
+            System.out.println("Shuting down game... Score is going to reset...");
+        }
+
+    }
+
 
     public String winLogic(String userInput, String computerOutput) {
         //          Schere verliert gegen stein, Schere gewinnt gegen Papier
@@ -60,19 +74,23 @@ public class SchereSteinPapier {
         }
         if (userInput.equals("Schere ✂️") && !computerOutput.equals("Stein \uD83E\uDEA8")) {
             System.out.println(TerminalColorStrings.ANSI_YELLOW + "(GEWINNER) " + TerminalColorStrings.ANSI_BLUE + "User:" + TerminalColorStrings.ANSI_RESET + "(" + userInput + ")" + " hat gewonnen.");
+            score.addScoreToUser();
             return "User";
         }
 
         if (userInput.equals("Stein \uD83E\uDEA8") && !computerOutput.equals("Papier \uD83D\uDCDD")) {
             System.out.println(TerminalColorStrings.ANSI_YELLOW + "(GEWINNER) " + TerminalColorStrings.ANSI_BLUE + "User:" + TerminalColorStrings.ANSI_RESET + "(" + userInput + ")" + " hat gewonnen.");
+            score.addScoreToUser();
             return "User";
         }
 
         if (userInput.equals("Papier \uD83D\uDCDD") && !computerOutput.equals("Schere ✂️")) {
             System.out.println(TerminalColorStrings.ANSI_YELLOW + "(GEWINNER) " + TerminalColorStrings.ANSI_BLUE + "User:" + TerminalColorStrings.ANSI_RESET + "(" + userInput + ")" + " hat gewonnen.");
+            score.addScoreToUser();
 
         } else {
             System.out.println(TerminalColorStrings.ANSI_YELLOW + "(GEWINNER) " + TerminalColorStrings.ANSI_GREEN + "Computer:" + TerminalColorStrings.ANSI_RESET + "(" + computerOutput + ")" + " hat gewonnen.");
+            score.addScoreToComputer();
         }
         return "Computer";
     }
