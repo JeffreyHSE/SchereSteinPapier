@@ -52,12 +52,12 @@ public class SchereSteinPapier {
     }
 
     public void playAgain() {
-        System.out.println(TerminalColorStrings.ANSI_YELLOW + "Do you want to play again?" + TerminalColorStrings.ANSI_RESET);
+        System.out.println(TerminalColorStrings.ANSI_YELLOW + "Willst du noch einmal spielen?" + TerminalColorStrings.ANSI_RESET);
         doYouWantToPlayAgain = ssp.nextLine();
-        if (doYouWantToPlayAgain.contains("Yes")) {
+        if (doYouWantToPlayAgain.contains("Ja") || doYouWantToPlayAgain.contains("ja")) {
             run();
         } else {
-            System.out.println("Shuting down game... Score is going to reset...");
+            System.out.println("Shuting down game... Score wird zurückgesetzt...");
         }
 
     }
