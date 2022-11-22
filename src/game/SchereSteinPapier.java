@@ -1,3 +1,8 @@
+package game;
+
+import game.score.SchereSteinPapierScore;
+import utils.TerminalColorStrings;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;

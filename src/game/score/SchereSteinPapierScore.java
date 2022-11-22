@@ -1,3 +1,7 @@
+package game.score;
+
+import utils.TerminalColorStrings;
+
 public class SchereSteinPapierScore {
 
     private int userScore = 0;

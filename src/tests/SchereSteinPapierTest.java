@@ -1,3 +1,6 @@
+package tests;
+
+import game.SchereSteinPapier;
 import org.junit.Test;
 
 import java.util.ArrayList;
